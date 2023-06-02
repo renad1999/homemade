@@ -8,6 +8,10 @@
     <input type="text" name="title">
   </label><br>
 
+  <label>Date:
+    <input type="date" name="date">
+  </label><br>
+
   <label>Image URL:
     <input type="text" name="imageURL">
   </label><br>
@@ -19,8 +23,8 @@
   <label>Instructions:
     <input type="text" name="instructions">
   </label><br>
-  <input type="submit">Add Recipe</button>
+  <button type="submit">Add Recipe</button>
 </form>
-<p><%= errorMsg %></p>
+
 
 <%- include('../partials/footer') %>

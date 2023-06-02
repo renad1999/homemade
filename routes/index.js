@@ -2,27 +2,24 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
+// GET home page. */
+ router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'Homemade'
+    title: 'All Recipes'
+ });
+});
+
+router.get('/recipes/new', function(req, res, next) {
+  res.render('recipes/new', {
+    title: 'Add Recipe'
   });
 });
 
-
-// router.get('/recipes/new', function(req, res, next) {
-//   res.render('recipes/new', {
-//     title: 'Add Recipe'
-//   });
-// });
-
-
-// router.get('/recipes', function(req, res, next) {
-//   res.render('recipes', {
-//     title: 'All Recipes'
-//   });
-// });
-
+router.get('/recipes', function(req, res, next) {
+  res.render('recipes', {
+    title: 'All Recipes'
+  });
+});
 
 
 
@@ -33,7 +30,7 @@ router.get('/auth/google', passport.authenticate(
     // Requesting the user's profile and email
     scope: ['profile', 'email'],
     // Optionally force pick account every time
-    // prompt: 'select_account'
+    prompt: 'select_account'
   }
 ));
 
