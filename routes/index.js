@@ -9,6 +9,23 @@ router.get('/', function(req, res, next) {
   });
 });
 
+
+// router.get('/recipes/new', function(req, res, next) {
+//   res.render('recipes/new', {
+//     title: 'Add Recipe'
+//   });
+// });
+
+
+// router.get('/recipes', function(req, res, next) {
+//   res.render('recipes', {
+//     title: 'All Recipes'
+//   });
+// });
+
+
+
+
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
   'google',
@@ -35,6 +52,7 @@ router.get('/logout', function(req, res){
     res.redirect('/recipes');
   });
 });
+
 
 
 

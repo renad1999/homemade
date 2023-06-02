@@ -5,16 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
-const recipesRouter = require('./routes/recipes');
+// var recipesRouter = require('./routes/recipes');
 
 require('dotenv').config();
 require('./config/database');
 //config passport middleware
 require('./config/passport');
 
-const indexRouter = require('./routes/index');
-// const usersRouter = require('./routes/users');
-
+var indexRouter = require('./routes/index');
+var recipesRouter = require('./routes/recipes');
 
 var app = express();
 
@@ -27,6 +26,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use('/recipes', recipesRouter);
+app.use('/', indexRouter);
+app.use('/recipes', recipesRouter);
 
 app.use(session({
   secret: process.env.SECRET,
@@ -43,9 +46,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-// app.use('/users', usersRouter);
-app.use('/recipes', recipesRouter);
-app.use('/', indexRouter);
+
+
 
 
 
