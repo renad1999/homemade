@@ -1,11 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const passport = require('passport');
+const Recipe = require('../models/recipe');
 
 // GET home page. */
  router.get('/', function(req, res, next) {
   res.render('index', {
-    title: 'All Recipes'
+    title: 'Homemade'
  });
 });
 
@@ -15,10 +16,17 @@ router.get('/recipes/new', function(req, res, next) {
   });
 });
 
-router.get('/recipes', function(req, res, next) {
-  res.render('recipes', {
-    title: 'All Recipes'
-  });
+router.get('/recipes', async function(req, res, next) {
+  try {
+    const recipes = await Recipe.find({});
+    res.render('recipes/index', {
+      title: 'All Recipes',
+      recipes: recipes
+    });
+  } catch (err) {
+    console.log('ERROR MESSAGE -->', err.message);
+    next();
+  }
 });
 
 
