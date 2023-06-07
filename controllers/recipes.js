@@ -14,7 +14,8 @@ module.exports = {
     index,
     show,
     edit,
-    update
+    update,
+    delete: deleteRecipe
 }
 
 async function index(req, res) {
@@ -63,6 +64,7 @@ async function newRecipe(req, res, next) {
 }
 
 async function create (req, res, next) {
+  req.body.user = req.user._id
     try {
       const body = formatBody(req.body)
 //submitting the document to the database 
@@ -115,3 +117,7 @@ res.render('recipes/show', { title: recipeDocument.title, recipe: recipeDocument
   }
 }
   
+async function deleteRecipe(req, res) {
+  await Recipe.findByIdAndDelete(req.params.id)
+  await res.redirect('/recipes');
+}

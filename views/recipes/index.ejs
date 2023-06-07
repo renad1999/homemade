@@ -4,10 +4,20 @@
  
 <ul>
     <% recipes.forEach(function(recipe){ %>
-<li><a href="/recipes/<%= recipe._id %>"><%= recipe.title %></a></li>
-
-  <% }) %> 
+        <li class="recipe-item">
+            <a href="/recipes/<%= recipe._id %>"><%= recipe.title %></a>
+        </li>
+    <% }) %> 
 </ul>
 
+<% recipes.forEach(function(recipe){ %>
+
+    <% if (user?._id.equals(recipe.user)) { %>
+
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST" class="delete-form">
+        <button type="submit" class="delete-button">X</button>
+    </form>
+    <% } %>
+<% }) %>
 
 <%- include('../partials/footer') %>

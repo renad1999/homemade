@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const Recipe = require('../models/recipe');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
+
 
 // GET home page. */
  router.get('/', function(req, res, next) {
@@ -57,8 +59,6 @@ router.get('/logout', function(req, res){
     res.redirect('/recipes');
   });
 });
-
-
 
 
 module.exports = router;

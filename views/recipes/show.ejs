@@ -3,11 +3,12 @@
 <ul>
 
     <% for(const key in recipe) { %>
-      <% if(key !== '_id' && key !== '__v' && key !== 'comment' && key !== 'updatedAt'  && key !== 'comments') { %>
+      <% if(key !== '_id' && key !== '__v' && key !== 'comment' && key !== 'updatedAt'  && key !== 'comments'  && key !== 'imageUrl' && key!== 'user') { %>
         <li><%= key[0].toUpperCase() + key.substring(1) %>: <%= recipe[key] %></li>
       <% } %>
     <% } %>
   </ul>
+<img class="resize-pic" src="<%= recipe.imageUrl %>">
 
 
 <!-- RENDER COMMENTS FORM -->
@@ -30,6 +31,7 @@
     <tbody>
       <% recipe.comments.forEach(function(c) { %>
         <tr>
+          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
           <td><%= c.createdAt.toLocaleString() %></td>
           <td><%= c.content %></td>
         </tr>
@@ -41,11 +43,9 @@
 <% } %>
 
 
+
 <div class="r-edit">
   <a href="/recipes/<%= recipe._id %>/edit">Edit your Recipe!</a>
 </div>
-
-
-
 
 <%- include('../partials/footer') %>

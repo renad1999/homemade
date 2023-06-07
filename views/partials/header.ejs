@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
 </head>
-<body>
+<body class=".bodyy">
     <nav>
-        <a href="/">Home</a> | 
+        <a href="/">HOME</a>    &nbsp;    |     &nbsp; 
         <a href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>>ALL RECIPES</a> 
         <% if (user) { %>
           <a href="/recipes/new" <%- title === 'Add Recipe' ? 'class="active"' : '' %>>ADD RECIPE</a> |
@@ -19,4 +23,6 @@
         <% } %>
     </nav>
    <main>
-    <h1><%= title %></h1>
+    <!-- <h1 class="title"><%= title %></h1> -->
+
+    

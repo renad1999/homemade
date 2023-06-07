@@ -1,15 +1,94 @@
+*{
+  font-family: Kavivanar;
+  color: darkolivegreen;
+  
+}
+
+.page-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  background-color: blanchedalmond;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  font-size: 28px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.recipe-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: lightgoldenrodyellow;
+  color: whitesmoke;
+  text-decoration: none;
+  border: 2px solid darkolivegreen;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-link:hover {
+  background-color:lightgrey; 
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.page-container{
+  background-image: url("https://www.vuelio.com/uk/wp-content/uploads/2022/08/Top-10-UK-Food-Blogs.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+height: 50vh;
+padding-top: 50px;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 30px; 
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 30px; 
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  word-spacing: 2cm;
+}
+
+nav .login {
+  margin-left: auto; /* Pushes "Log In" to the right */
 }
 
 a {
-  color: #00B7FF;
+  color: darkolivegreen;
 }
 
 .login {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   height: 34px;
 }
@@ -42,12 +121,71 @@ input:not([type="submit"]) {
   margin-top: 5px;
 }
 
-.red{
-  color: red;
-  text-align: center;
-  margin-top: 15px;
-}
-
 .r-edit{
   margin-top: 20px;
+}
+
+.resize-pic{
+max-width: 130px;
+margin-left: 30px;
+}
+
+.recipe-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.recipe-link {
+  flex: 1;
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.delete-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #950606;
+}
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+
+.foot {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  padding: 10px;
+  text-align: left;
+}
+
+.intro{
+  color: black;
 }
