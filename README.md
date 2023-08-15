@@ -47,22 +47,15 @@ I used trello boards to write down everything I needed to get done using icebox,
 Build Process
 
 
-<% recipes.forEach(function(recipe){ %>
-<% if (user?._id.equals(recipe.user)) { %>
+<img width="826" alt="Screenshot 2023-08-15 at 20 47 12" src="https://github.com/renad1999/homemade/assets/112344006/9fb0fd72-180a-4ac4-ba37-11ca741e0a3b">
 
-<form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST" class="delete-form">
-<button type="submit" class="delete-button">X</button>
-   </form>
-   <% } %>
-<% }) %>
 
 
 The code above was implemented to control the deletion of recipes, ensuring that only the user who posted a recipe can delete their own recipe. It checks if the current user matches the recipe's owner before displaying the delete button.
 After confirming that this functionality works as intended, I found it really impressive and couldn't contain my excitement about it! It adds an extra layer of security and personal control to the recipe blog.
 
 
-
-<img class="resize-pic" src="<%= recipe.imageUrl %>">
+<img width="489" alt="Screenshot 2023-08-15 at 20 48 54" src="https://github.com/renad1999/homemade/assets/112344006/96690f43-c0c3-4627-8b94-fc822c1e012d">
 
 
 
