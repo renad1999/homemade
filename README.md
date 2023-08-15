@@ -172,5 +172,5 @@ Future Improvements
 
  Integration of video content. Allowing users to add videos to their recipes would provide visual demonstrations of cooking techniques, tips, and tricks, making it more engaging and accessible for readers to follow along.
 
- By incorporating these improvements, I hope to create a food blog that offers a pleasant user experience and becomes a reliable resource for culinary inspiration and learning. Gathering feedback and adapting to the evolving needs of my readers will be crucial in refining the blog over time.
+By incorporating these improvements, I hope to create a food blog that offers a pleasant user experience and becomes a reliable resource for culinary inspiration and learning. Gathering feedback and adapting to the evolving needs of my readers will be crucial in refining the blog over time.
 
