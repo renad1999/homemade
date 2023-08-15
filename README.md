@@ -48,13 +48,10 @@ Build Process
 
 
 <% recipes.forEach(function(recipe){ %>
+<% if (user?._id.equals(recipe.user)) { %>
 
-
-   <% if (user?._id.equals(recipe.user)) { %>
-
-
-   <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST" class="delete-form">
-       <button type="submit" class="delete-button">X</button>
+<form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST" class="delete-form">
+<button type="submit" class="delete-button">X</button>
    </form>
    <% } %>
 <% }) %>
